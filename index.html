@@ -1,34 +1,38 @@
+<!--create html from scratch using html 5 -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-        </div>
-      </div>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Quiz</title>
+    <!-- my css code sheet linked below-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<!--below  will be the nav bar for the highscores which will take you to a new page and the timer that will count down while taking the quiz-->
+<body>
+    <nav class="scores"><a href="highscores.html">View Highscores</a></nav>
+
+    <div class="timer"> Time: <span id="timer">10</span></div>
+    <!--this will be the homepage /landing page-->
+    <main class= "wrapper">
+        <section id = "start_screen" class="start">
+            <h1>API Quiz</h1>
+            <p> Answer the following questions to the best of your ability. At the end you will be told your score. <strong>Goodluck!</strong></p>
+           <a href="#until-found-box"><button onclick="" id="start">Start Quiz</button></a>
+        </section>
+        <!--this will store my questions and multiple choice answers after starting the quiz. hidden until the button is clicked and starts the timer-->
+        <section id="questions" class="hidden">
+            <h2 id="question-title"></h2>
+            <div id="choices" class="choices"></div>
+        </section>
+       <!-- when either all questions are answered or the time runs out this ending page will appear prompting you to enter initials next to score--> 
+        <section id="end-screen" class="hidden">
+            <h2>Finished!</h2>
+            <p><strong>Congratulations</strong>, your final score is <span id= "final-score"></span>.</p>
+        </section>
+    </main>
+    <!-- my javascript linked below-->
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
