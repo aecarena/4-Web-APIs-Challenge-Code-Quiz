@@ -1,38 +1,66 @@
-<!--create html from scratch using html 5 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Quiz</title>
-    <!-- my css code sheet linked below-->
+    <title>Web APIs Quiz Game</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<!--below  will be the nav bar for the highscores which will take you to a new page and the timer that will count down while taking the quiz-->
-<body>
-    <nav class="scores"><a href="highscores.html">View Highscores</a></nav>
+    <link rel="stylesheet">
 
-    <div class="timer"> Time: <span id="timer">10</span></div>
-    <!--this will be the homepage /landing page-->
-    <main class= "wrapper">
-        <section id = "start_screen" class="start">
-            <h1>API Quiz</h1>
+
+</head>
+<body>
+<header class=>
+    <div class="title">API QUIZ<a href="highscores.html" class="highscores float-end">View Highscores</a></div>
+</header>
+<main class="container position-relative">
+    <div id="start" class="hide text-center">
+        <h1>API Quiz</h1>
+        <button type="button" class="buttons mt-5" id="start-btn">Start!</button> 
+    </div>
+    <div id="rules" class="info-box mt-5" style="width: auto" >
+        <div class="info-title">Rules</div>
+        <div class="info-list">
+            <div class="info">1. You only have <span>60 seconds</span> to finish 6 questions.</div>
+            <div class="info">2. You cannot go back to a previous question.</div>
+            <div class="info">3. If you answer a question incorrectly, you are penalized 5 seconds.</div>
+            
+            
             <p> Answer the following questions to the best of your ability. At the end you will be told your score. <strong>Goodluck!</strong></p>
-           <a href="#until-found-box"><button onclick="" id="start">Start Quiz</button></a>
-        </section>
-        <!--this will store my questions and multiple choice answers after starting the quiz. hidden until the button is clicked and starts the timer-->
-        <section id="questions" class="hidden">
-            <h2 id="question-title"></h2>
-            <div id="choices" class="choices"></div>
-        </section>
-       <!-- when either all questions are answered or the time runs out this ending page will appear prompting you to enter initials next to score--> 
-        <section id="end-screen" class="hidden">
-            <h2>Finished!</h2>
-            <p><strong>Congratulations</strong>, your final score is <span id= "final-score"></span>.</p>
-        </section>
-    </main>
-    <!-- my javascript linked below-->
-    <script src="script.js"></script>
+        </div>
+        <div class="buttons">
+            <button class="quit btn btn-primary btn-sm"> <a href=""class= "highscores" float-end>Exit Quiz</a></button>
+            <button class="restart btn btn-primary btn-sm">Continue</button>
+        </div>
+    </div>
+    <section id="questions" class="hide row quiz-box mt-5" style="width: auto">
+        <div id="time-rem">
+            <span>Time Left: 60</span>
+        </div>   
+        <h1 class="que-text">
+            <span></span>
+        </h1>
+        <div id="choices" class="flex-direction">
+                <div class="option"><span></span></div>
+                <div class="option"><span></span></div>
+                <div class="option"><span></span></div>
+                
+        </div>
+        <div id="response">
+            <span></span>
+        </div>
+    </section>
+    <div id="quiz-end" class="hide text-center p-5">
+        <div class="flex-direction flex-direction"><h1>End of Quiz!</h1>
+            <h3 class="score"></h3>
+            <h2>Enter Initials:</h2>
+            <input type="text" id="initials" class="mt-1">
+            <button id="save-score">Submit</button>
+        </div>
+    </div>
+</main>
+<script src="game.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

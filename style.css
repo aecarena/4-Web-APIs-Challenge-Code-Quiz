@@ -1,61 +1,165 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+:root{
+    --Purple: #a606f0;
+    --purple: #4a1070;
+    --offWHite: #fff;
+    --white: #ffffff;
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+body{
+    background: linen;
+}
+.hide{
+    display: none;
+}
+.start{
+    display: block;
+}
+.title{
+    border-bottom: 1px solid lightgray;
 }
 
-
-body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
+.info-box{
+    width: 540px;
+    background: var(--offWHite);
+    border-radius: 5px;
+}
+.info-box .info-title {
+    height: 60px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding: auto;
+    text-align: center;
+    justify-content: center;
+}
+.info-box .info-list{
+    padding: 15px 35px;
+}
+.info-box .info-list .info{
+    margin: 5px 0;
+    font-size: 17px;
+}
+.info-box .info-list .info span{
+    font-weight: 600;
+    color: rgb(169, 10, 231);   
 }
 
-head {
-    text-align: center;
-    padding: 20px;
-    padding-top: 0px;
-    color: hsl(286, 70%, 29%);
-  }
-
-.start {
-    border: none;
-    background-color: rgb(248, 245, 248);
-    border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-      0px;
-    color: hsl(0, 0%, 1%);
-    display: inline-block;
-    font-size: 22px;
-    line-height: 22px;
-    margin: 16px 16px 16px 20px;
-    padding: 14px 34px;
-    text-align: center;
+.quiz-box{
+    width: 540px;
+    background: var(--offWHite);
+    border-radius: 5px;
+}
+.que-text{
+    border-top: 1px solid lightgray;
+}
+#timeRem{
+    margin-top: 5;
+}
+#start-btn{
+    width: 50%;
+    background-color: var(--Purple);
+    border-color: var(--offWHite);
+    color: var(--white);
+    font-weight: bolder;
+    letter-spacing: 2px;
+    border-radius: 10px;
+}
+#start-btn:hover{
+    background: var(--purple);
+    color: var(--white);
+}
+.info-box .buttons{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: o 35px;
+    border-top: 1px solid lightgray;
+} 
+.info-box .buttons button{
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid var(--purple);
+    background: var(--purple);
+    border-radius: 7px;
+    color: var(--offWHite);
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-  }
-  
-button {
-    cursor: default;
-    background: #c90ae2;
-   
-  }
-  div#until-found-box {
-    color: rgb(191, 10, 228);
-    border: 5px dotted rgb(168, 23, 212);
-    background-color: lightgray;
-  }
-
-
-@media (max-width: 690px) {
-    .btn {
-      font-size: 10rem;
-      margin: 16px 0px 0px 0px;
-      padding: 10px 15px;
-    }
-
-  }
-  
-  @media (max-width: 500px) {
-    .btn {
-      font-size: 5rem;
-    }
-  }
+    transition: all 0.3s ease;
+}
+.buttons button.quit{
+    border-color: var(--purple);
+    background-color: var(--offWHite);
+    color: var(--Purple);
+}
+.buttons button.restart{
+    color: var(--offWHite);
+    background: var(--Purple);
+}
+.buttons button.quit:hover{
+    background: var(--Purple);
+    color: var(--offWHite);
+}
+.buttons button.restart:hover{
+    background: var(--Purple);
+    color: var(--white);
+}
+.question {
+    border-bottom: 1px solid lightgray;
+}
+.option {
+    border: solid var(--purple);
+    margin: 5px;
+    background: var(--Purple);
+    color: var(--white);
+    border-radius: 5px;
+}
+.option:hover{
+    background: var(--purple);
+    cursor: pointer;
+}
+#initials, #saveScore {
+    width: 100px;
+}
+#response{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: o 35px;
+    border-top: 1px solid lightgray;
+}
+#saveScore{
+    border-color: var(--purple);
+    background-color: var(--offWHite);
+    color: var(--purple);
+    width:50%
+}
+#saveScore:hover{
+    background: var(--purple);
+    color: var(--offWHite);
+}
+.buttons{
+    justify-content: center;
+}
+.buttons a {
+        color: rgb(124, 7, 170);
+        text-decoration: none; /* no underline */
+}
+@media only screen and  (max-width: 768px) {
+    font: serif;
+    font-size: 1.5em;
+    justify-content: space-around;
+}
+@media only screen and (max-width: 330px) {
+    font: serif;
+    font-size: 0.5em;
+    justify-content: space-around;
+}
