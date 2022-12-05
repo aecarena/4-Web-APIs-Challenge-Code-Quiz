@@ -40,7 +40,7 @@ startBtn.onclick = () => {
 
 //Get Questions and Options from Array
 function showQuestions(index){
-    if (queCount>=10){
+    if (queCount>=6){
         return;
     }
     const queText = document.querySelector(".que-text");
@@ -59,7 +59,7 @@ function showQuestions(index){
 
 //Show Next Question When Question is answered
 function optionSelected(answer){
-    if (queCount>=10){
+    if (queCount>=6){
         return;
     }
     let userAns = answer.textContent;
@@ -81,7 +81,7 @@ function optionSelected(answer){
 }
 function nextQuestion(){
     queCount++;
-    if(queCount == 10){
+    if(queCount == 6){
         
         quizEnd()
     };
